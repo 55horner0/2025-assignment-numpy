@@ -37,13 +37,13 @@ def max_index(X):
         If the input is not a numpy array or
         if the shape is not 2D.
     """
-    if (type(X) != np.ndarray):
+    if X is np.ndarray:
         raise ValueError
     if len(X.shape) != 2:
         raise ValueError
     i = 0
     j = 0
-    i,j = np.unravel_index(np.argmax(X, axis=None), X.shape)
+    i, j = np.unravel_index(np.argmax(X, axis=None), X.shape)
     return i, j
 
 
